@@ -227,9 +227,9 @@ return [
     |
     | For more detailed instructions you can look here:
     | https://github.com/jeroennoten/Laravel-AdminLTE/#8-menu-configuration
-    |
+    | 
     */
-
+    // ! SEMUA SIDEBAR DILETAKKAN DISINI!
     'menu' => [
         [
             'text' => 'search',
@@ -297,21 +297,21 @@ return [
                 ],
             ],
         ],
-        ['header' => 'labels'],
+        ['header' => 'Product Property'],
         [
-            'text'       => 'important',
+            'text'       => 'Brand',
             'icon_color' => 'red',
-            'url'        => '#',
+            'url'        => '/brand',
         ],
         [
-            'text'       => 'warning',
+            'text'       => 'Category',
             'icon_color' => 'yellow',
-            'url'        => '#',
+            'url'        => '/category',
         ],
         [
-            'text'       => 'information',
+            'text'       => 'Product',
             'icon_color' => 'cyan',
-            'url'        => '#',
+            'url'        => '/product',
         ],
     ],
 
@@ -351,37 +351,41 @@ return [
 
     'plugins' => [
         'Datatables' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => false,
-                    'location' => '//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js',
-                ],
-                [
-                    'type' => 'js',
-                    'asset' => false,
-                    'location' => '//cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js',
+                    'asset' => true,
+                    'location' => 'theme/plugin/Datatables/datatables.min.js',
+                    // 'location' => '//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js',
                 ],
                 [
                     'type' => 'css',
-                    'asset' => false,
-                    'location' => '//cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css',
+                    'asset' => true,
+                    'location' => 'theme/plugin/Datatables/datatables.min.css',
+                    // 'location' => '//cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js',
                 ],
+                // [
+                //     'type' => 'css',
+                //     'asset' => false,
+                //     'location' => '//cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css',
+                // ],
             ],
         ],
         'Select2' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => false,
-                    'location' => '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js',
+                    'asset' => true,
+                    'location' => 'theme/plugin/Select2/select2.min.js',
+                    // 'location' => '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js',
                 ],
                 [
                     'type' => 'css',
-                    'asset' => false,
-                    'location' => '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.css',
+                    'asset' => true,
+                    'location' => 'theme/plugin/Select2/select2.min.css',
+                    // 'location' => '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.css',
                 ],
             ],
         ],
@@ -396,12 +400,13 @@ return [
             ],
         ],
         'Sweetalert2' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => false,
-                    'location' => '//cdn.jsdelivr.net/npm/sweetalert2@8',
+                    'asset' => true,
+                    'location' => 'theme/plugin/Sweetalert2/sweetalert2.all.min.js',
+                    // 'location' => '//cdn.jsdelivr.net/npm/sweetalert2@8',
                 ],
             ],
         ],
