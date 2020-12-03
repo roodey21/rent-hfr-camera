@@ -54,6 +54,25 @@ class CategoryController extends Controller
         }
         return response()->json($data);
     }
+
+    public function getData(Request $request)
+    {
+        //
+        if ($request->has('q')) {
+            $search = $request->q;
+            $categories = Category::select('id', 'name')
+            ->where('name', 'LIKE', '%'.$search.'%')
+            ->get();
+            return response()->json($categories);
+        }
+        $categories = Category::all();
+
+        // $data = [];
+        // foreach ($categories as $cat) {
+        //     $data[] = ['id' =>  $cat->id,'text'  =>  $cat->name];
+        // }
+        return response()->json($categories);
+    }
     /**
      * Show the form for creating a new resource.
      *

@@ -31,6 +31,19 @@ class BrandController extends Controller
         return view('brands.index');
     }
 
+    public function getData(Request $request)
+    {
+        if($request->has('q')){
+            $search = $request->q;
+            $brands = Brand::select('id', 'name')
+                        ->where('name', 'LIKE', '%'.$search.'%')
+                        ->get();
+            return response()->json($brands);
+        }
+        $brands = Brand::all();
+        return response()->json($brands);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

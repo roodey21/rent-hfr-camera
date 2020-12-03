@@ -21,4 +21,5 @@ class Brand extends Model
             ]
         ];
     }
+    
 }
